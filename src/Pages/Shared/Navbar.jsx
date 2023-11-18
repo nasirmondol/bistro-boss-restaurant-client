@@ -1,11 +1,41 @@
 import { Link } from "react-router-dom";
+import useAuth from "../../hooks/useAuth";
+import useCart from "../../hooks/useCart";
+import { BsFillCartXFill } from "react-icons/bs";
+
 
 const Navbar = () => {
+    const [cart] = useCart();
+    console.log(cart);
+    const { user, logOut } = useAuth();
+    const handleLogOut = () => {
+        logOut()
+            .then(() => { })
+            .catch(error => { console.log(error) })
+    }
     const navLInk = <>
         <li><Link to="/">Home</Link></li>
         <li><Link to="/menu">Our Menu</Link></li>
         <li><Link to="/order/salad">Order Food</Link></li>
-        <li><Link to="/login">Login</Link></li>
+        <li><Link to="/secret">Secret</Link></li>
+        <li>
+            <Link to="/dashboard/cart">
+                <button className="">
+                    <div className="badge badge-secondary"><BsFillCartXFill></BsFillCartXFill>+{cart?.length}</div>
+                </button>
+            </Link>
+        </li>
+        {user ?
+            <div className="flex items-center">
+                <img className="w-10 rounded-full" src={user?.photoURL} alt="" />
+                <span>{user?.displayName}</span>
+                <button onClick={handleLogOut} className="btn-ghost">Log out</button>
+            </div> :
+            <>
+                <li><Link to="/login">Log in</Link></li>
+            </>
+        }
+
     </>
     return (
         <>
