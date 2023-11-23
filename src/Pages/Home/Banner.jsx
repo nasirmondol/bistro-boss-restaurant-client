@@ -28,7 +28,6 @@ const Banner = () => {
                 <img src={img6} />
             </div>
         </Carousel>
-
     );
 };
 

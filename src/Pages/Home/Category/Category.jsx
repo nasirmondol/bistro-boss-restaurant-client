@@ -32,28 +32,28 @@ const Category = () => {
             >
                 <SwiperSlide>
                     <img src={img1} alt="" />
-                    <h2 className="text-2xl font-semibold text-center -mt-14 uppercase">Salads</h2>
+                    <h2 className="bg-white bg-opacity-90 text-2xl font-semibold text-center -mt-14 uppercase">Salads</h2>
                 </SwiperSlide>
                 <SwiperSlide>
                     <img src={img2} alt="" />
-                    <h2 className="text-2xl font-semibold text-center -mt-14 uppercase">Salads</h2>
+                    <h2 className="bg-white bg-opacity-90 lg:text-2xl font-medium text-center -mt-14 uppercase">Pizza</h2>
                 </SwiperSlide>
                 <SwiperSlide>
                     <img src={img3} alt="" />
-                    <h2 className="text-2xl font-semibold text-center -mt-14 uppercase">Salads</h2>
+                    <h2 className="bg-white bg-opacity-90 text-2xl font-semibold text-center -mt-14 uppercase">Burger</h2>
                 </SwiperSlide>
                 <SwiperSlide>
                     <img src={img4} alt="" />
-                    <h2 className="text-2xl font-semibold text-center -mt-14 uppercase">Salads</h2>
+                    <h2 className="bg-white bg-opacity-90 text-2xl font-semibold text-center -mt-14 uppercase">Dessert</h2>
                 </SwiperSlide>
                 <SwiperSlide>
 
                     <img src={img5} alt="" />
-                    <h2 className="text-2xl font-semibold text-center -mt-14 uppercase">Salads</h2>
+                    <h2 className="bg-white bg-opacity-90 text-2xl font-semibold text-center -mt-14 uppercase">Soup</h2>
                 </SwiperSlide>
                 <SwiperSlide>
                     <img src={img6} alt="" />
-                    <h2 className="text-2xl font-semibold text-center -mt-14 uppercase">Salads</h2>
+                    <h2 className="bg-white  text-2xl font-semibold text-center -mt-14 uppercase">Drinks</h2>
                 </SwiperSlide>
             </Swiper>
         </section>

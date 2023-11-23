@@ -2,11 +2,14 @@ import { Link } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
 import useCart from "../../hooks/useCart";
 import { BsFillCartXFill } from "react-icons/bs";
+import useAdmin from "../../hooks/useAdmin";
 
 
 const Navbar = () => {
     const [cart] = useCart();
     console.log(cart);
+    const [isAdmin] = useAdmin();
+
     const { user, logOut } = useAuth();
     const handleLogOut = () => {
         logOut()
@@ -18,6 +21,14 @@ const Navbar = () => {
         <li><Link to="/menu">Our Menu</Link></li>
         <li><Link to="/order/salad">Order Food</Link></li>
         <li><Link to="/secret">Secret</Link></li>
+        {
+            user && isAdmin &&
+            <li><Link to="/dashboard/adminHome">Admin Home</Link></li>
+        }
+        {
+            user && !isAdmin &&
+            <li><Link to="/dashboard/userHome"></Link></li>
+        }
         <li>
             <Link to="/dashboard/cart">
                 <button className="">
@@ -25,10 +36,11 @@ const Navbar = () => {
                 </button>
             </Link>
         </li>
+
         {user ?
             <div className="flex items-center">
-                <img className="w-10 rounded-full" src={user?.photoURL} alt="" />
-                <span>{user?.displayName}</span>
+                {/* <img className="w-10 rounded-full" src={user?.photoURL} alt="" />
+                <span>{user?.displayName}</span> */}
                 <button onClick={handleLogOut} className="btn-ghost">Log out</button>
             </div> :
             <>
@@ -50,7 +62,7 @@ const Navbar = () => {
                         </ul>
                     </div>
                     <div className="uppercase">
-                        <a className=" text-2xl font-bold ">Bistro Boss</a>
+                        <a className=" lg:text-2xl font-bold ">Bistro Boss</a>
                         <br />
                         <a className=""><small className="w-[200px]">Restaurant</small></a>
                     </div>
@@ -59,9 +71,6 @@ const Navbar = () => {
                     <ul className="menu menu-horizontal px-1">
                         {navLInk}
                     </ul>
-                </div>
-                <div className="navbar-end">
-                    <a className="btn">Button</a>
                 </div>
             </div>
         </>

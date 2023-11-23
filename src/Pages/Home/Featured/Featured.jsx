@@ -8,7 +8,7 @@ const Featured = () => {
             <div>
                 <SectionTitle subHeading={"Check It Out"} heading={"Form Our Menu"}></SectionTitle>
             </div>
-            <div className="flex items-center justify-center bg-opacity-60 bg-slate-400 lg:px-20 lg:py-20">
+            <div className="lg:flex items-center justify-center bg-opacity-60 bg-slate-400 lg:px-20 lg:py-20">
                 <div>
                     <img src={featuredImage} alt="" />
                 </div>

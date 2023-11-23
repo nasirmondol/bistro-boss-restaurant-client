@@ -2,6 +2,7 @@ import Swal from "sweetalert2";
 import useCart from "../../../hooks/useCart";
 import { MdDelete } from "react-icons/md";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
+import { Link } from "react-router-dom";
 
 
 const Cart = () => {
@@ -30,7 +31,8 @@ const Cart = () => {
                             Swal.fire({
                                 title: "Deleted!",
                                 text: `Your file has been deleted.`,
-                                icon: "success"
+                                icon: "success",
+                                timer: 1500
                             });
                         }
                     })
@@ -38,9 +40,17 @@ const Cart = () => {
         });
     }
     return (
-        <div className="items-center px-4">
-            <h2 className="px-4 text-xl text-center">Cart: {cart.length}</h2>
-            <h3 className="text-xl font-semibold">Total: ${totalPrice}</h3>
+        <div className="items-center px-4 mt-10">
+            <div className="flex justify-center gap-10 items-center mb-5">
+                <h2 className="px-4 text-xl text-center">Cart: {cart.length}</h2>
+                <h3 className="text-xl font-semibold">Total: ${totalPrice}</h3>
+                { cart.length?
+                    <Link to="/dashboard/payment">
+                    <button className="btn btn-primary btn-outline">Pay</button>
+                </Link>:
+                     <button disabled className="btn btn-primary btn-outline">Pay</button>
+                }
+            </div>
             <div>
                 <div className="overflow-x-auto bg-white shadow-2xl">
                     <table className="table">
@@ -64,8 +74,6 @@ const Cart = () => {
                                     <button onClick={() => handleDelete(c._id)}><MdDelete className="text-xl text-red-500" /></button>
                                 </tr>)
                             }
-
-
                         </tbody>
                     </table>
                 </div>

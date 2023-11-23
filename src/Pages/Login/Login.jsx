@@ -29,9 +29,10 @@ const Login = () => {
                 const user = result.user;
                 console.log(user)
                 Swal.fire({
-                    title: "Good job!",
+                    title: "Congratulation!",
                     text: "Login successful",
-                    icon: "success"
+                    // icon: "success"
+                    timer: 1500
                 });
 
                 event.target.reset();

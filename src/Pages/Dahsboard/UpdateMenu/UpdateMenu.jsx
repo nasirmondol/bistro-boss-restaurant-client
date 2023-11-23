@@ -1,7 +1,6 @@
 import { useForm } from "react-hook-form";
 import { FaUtensils } from "react-icons/fa";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
-import { useQuery } from "@tanstack/react-query";
 import Swal from "sweetalert2";
 import useUserPublic from "../../../hooks/useUserPublic";
 import { useLoaderData } from "react-router-dom";
@@ -37,6 +36,7 @@ const UpdateMenu = () => {
         const menuRes = await axiosSecure.patch(`/menu/${_id}`, menuItems);
         console.log(menuRes.data);
         if (menuRes.data.modifiedCount) {
+            reset()
             Swal.fire({
                 position: "top-end",
                 icon: "success",

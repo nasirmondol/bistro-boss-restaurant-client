@@ -3,7 +3,6 @@ import useAxiosSecure from "../../../hooks/useAxiosSecure";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import { FaUsers } from "react-icons/fa";
 import Swal from "sweetalert2";
-import axios from "axios";
 
 
 const AllUsers = () => {

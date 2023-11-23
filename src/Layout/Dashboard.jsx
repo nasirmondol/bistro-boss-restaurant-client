@@ -18,28 +18,118 @@ const Dashboard = () => {
                 <ul className="p-4">
                     {
                         isAdmin ? <>
-                            <li><NavLink className="gap-1  font-serif flex font-serif py-2 text-xl uppercase items-center" to="/dashboard/admin"><MdHomeFilled /> Admin Home</NavLink></li>
-                            <li><NavLink className="gap-1  font-serif flex font-serif py-2 text-xl uppercase items-center" to="/dashboard/addItems"><FaUtensils />
+                            <li><NavLink
+                                style={({ isActive, isTransitioning }) => {
+                                    return {
+                                        fontWeight: isActive ? "bold" : "",
+                                        color: isActive ? "green" : "black",
+                                        viewTransitionName: isTransitioning ? "slide" : "",
+                                    };
+                                }}
+                                className="gap-1 flex font-serif py-2 text-xl uppercase items-center" to="/dashboard/adminHome"><MdHomeFilled /> Admin Home</NavLink></li>
+
+                            <li><NavLink
+                                style={({ isActive, isTransitioning }) => {
+                                    return {
+                                        fontWeight: isActive ? "bold" : "",
+                                        color: isActive ? "green" : "black",
+                                        viewTransitionName: isTransitioning ? "slide" : "",
+                                    };
+                                }} className="gap-1  flex font-serif py-2 text-xl uppercase items-center" to="/dashboard/addItems"><FaUtensils />
                                 Add Items</NavLink></li>
 
-                            <li><NavLink className="gap-1 font-serif flex py-2 text-xl uppercase items-center" to="/dashboard/manage"><TfiMenuAlt /> Manage Items</NavLink></li>
-                            <li><NavLink className="gap-1 font-serif flex py-2 text-xl uppercase items-center" to="/dashboard/bookings"><TbBrandBooking /> Manage Bookings</NavLink></li>
-                            <li><NavLink className="gap-1 font-serif flex py-2 text-xl uppercase items-center" to="/dashboard/users"><FaUsers /> All Users</NavLink></li>
+                            <li><NavLink
+                                style={({ isActive, isTransitioning }) => {
+                                    return {
+                                        fontWeight: isActive ? "bold" : "",
+                                        color: isActive ? "green" : "black",
+                                        viewTransitionName: isTransitioning ? "slide" : "",
+                                    };
+                                }}
+                                className="gap-1 font-serif flex py-2 text-xl uppercase items-center" to="/dashboard/manage"><TfiMenuAlt /> Manage Items</NavLink></li>
+                            <li><NavLink
+                                style={({ isActive, isTransitioning }) => {
+                                    return {
+                                        fontWeight: isActive ? "bold" : "",
+                                        color: isActive ? "green" : "black",
+                                        viewTransitionName: isTransitioning ? "slide" : "",
+                                    };
+                                }}
+                                className="gap-1 font-serif flex py-2 text-xl uppercase items-center" to="/dashboard/bookings"><TbBrandBooking /> Manage Bookings</NavLink></li>
+                            <li><NavLink
+                                style={({ isActive, isTransitioning }) => {
+                                    return {
+                                        fontWeight: isActive ? "bold" : "",
+                                        color: isActive ? "green" : "black",
+                                        viewTransitionName: isTransitioning ? "slide" : "",
+                                    };
+                                }}
+                                className="gap-1 font-serif flex py-2 text-xl uppercase items-center" to="/dashboard/users"><FaUsers /> All Users</NavLink></li>
+
                         </> :
                             <>
-                                isNot admin
+                                 <li><NavLink
+                                style={({ isActive, isTransitioning }) => {
+                                    return {
+                                        fontWeight: isActive ? "bold" : "",
+                                        color: isActive ? "green" : "black",
+                                        viewTransitionName: isTransitioning ? "slide" : "",
+                                    };
+                                }}
+                                className="gap-1 flex font-serif py-2 text-xl uppercase items-center" to="/dashboard/userHome"><MdHomeFilled /> User Home</NavLink></li>
+                                <li><NavLink
+                                    style={({ isActive, isTransitioning }) => {
+                                        return {
+                                            fontWeight: isActive ? "bold" : "",
+                                            color: isActive ? "green" : "black",
+                                            viewTransitionName: isTransitioning ? "slide" : "",
+                                        };
+                                    }}
+                                    className="gap-1 font-serif flex py-2 text-xl uppercase items-center" to="/dashboard/paymenthistory"><FaUsers /> Payment History</NavLink></li>
                             </>
                     }
 
                     <div className="font-serif divider divider-accent"></div>
-                    <li><NavLink className="gap-1 font-serif flex py-2 text-xl uppercase items-center" to="/"><MdHomeFilled />
+                    <li><NavLink
+                        style={({ isActive, isTransitioning }) => {
+                            return {
+                                fontWeight: isActive ? "bold" : "",
+                                color: isActive ? "green" : "black",
+                                viewTransitionName: isTransitioning ? "slide" : "",
+                            };
+                        }}
+                        className="gap-1 font-serif flex py-2 text-xl uppercase items-center" to="/"><MdHomeFilled />
 
                         Home</NavLink></li>
-                    <li><NavLink className="gap-1 font-serif flex py-2 text-xl uppercase items-center" to="/"><MdOutlineMenu />
+                    <li><NavLink
+                        style={({ isActive, isTransitioning }) => {
+                            return {
+                                fontWeight: isActive ? "bold" : "",
+                                color: isActive ? "green" : "black",
+                                viewTransitionName: isTransitioning ? "slide" : "",
+                            };
+                        }}
+                        className="gap-1 font-serif flex py-2 text-xl uppercase items-center" to="/"><MdOutlineMenu />
                         Menu</NavLink></li>
-                    <li><NavLink className="gap-1 font-serif flex py-2 text-xl uppercase items-center" to="/"><MdOutlineShoppingCartCheckout />
+                    <li><NavLink
+                        style={({ isActive, isTransitioning }) => {
+                            return {
+                                fontWeight: isActive ? "bold" : "",
+                                color: isActive ? "green" : "black",
+                                viewTransitionName: isTransitioning ? "slide" : "",
+                            };
+                        }}
+                        className="gap-1 font-serif flex py-2 text-xl uppercase items-center" to="/"><MdOutlineShoppingCartCheckout />
                         Shop</NavLink></li>
-                    <li><NavLink className="gap-1 font-serif flex py-2 text-xl uppercase items-center" to="/"><MdOutlineMarkEmailRead />
+                    <li><NavLink
+                        style={({ isActive, isTransitioning }) => {
+                            return {
+                                fontWeight: isActive ? "bold" : "",
+                                color: isActive ? "green" : "black",
+                                viewTransitionName: isTransitioning ? "slide" : "",
+                            };
+                        }}
+                        className="gap-1 font-serif flex py-2 text-xl uppercase items-center" to="/"><MdOutlineMarkEmailRead />
                         Contact</NavLink></li>
                 </ul>
             </div>
